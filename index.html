@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="style.css" />
+
+        <link
+            href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
+        <title></title>
+    </head>
+    <body>
+        <div class="select-menu" id="selectMenu">
+            <div class="select-btn" id="selectBtn">
+                <span class="sBtn-text"> TARGET TIPINI SEÇIN</span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+
+            <ul class="options options-container">
+                <li class="option active-option" onclick="downloadImage()">
+                    <span class="option-text">IMAGE</span>
+                </li>
+                <div class="dropdown-game">
+                    <button
+                        class="dropdown-btn-game option-game  "
+                        onclick="toggleDropdowngame()"
+                    >
+                        GAMIFICATIONS
+                    </button>
+                    <ul class="dropdown-content-game" id="gameDropdown">
+                        <li
+                            class="option-game active-option"
+                            onclick="displaySaveButton(); carkıFelek(); displayWrapper()"
+                        >
+                            <span class="option-text">ÇARKI FELEK</span>
+                        </li>
+                        <li
+                            class="option-game active-option"
+                            onclick="displaySaveButton();  kazıKazan(); displayWrapper()"
+                        >
+                            <span class="option-text">KAZI KAZAN</span>
+                        </li>
+                        <li
+                            class="option-game active-option"
+                            onclick="displaySaveButton();findToWin(); displayWrapper()"
+                        >
+                            <span class="option-text">FIND TO WIN</span>
+                        </li>
+
+                        <li
+                            class="option-game active-option "
+                            onclick="displaySaveButton(); Jackpot(); displayWrapper()"
+                        >
+                            <span class="option-text">JACKPOT</span>
+                        </li>
+                    </ul>
+                </div>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); pop_up(); displayWrapper()"
+                >
+                    <span class="option-text">POP-UP</span>
+                </li>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); mailForm(); displayWrapper() "
+                >
+                    <span class="option-text">MAIL FORM </span>
+                </li>
+                <div class="dropdown-banner">
+                    <button
+                        class="dropdown-btn-banner option-game "
+                        onclick="toggleDropdownbanner()"
+                    >
+                        BANNERS
+                    </button>
+                    <ul class="dropdown-content-banner" id="bannerDropdown">
+                        <li
+                            class="option-banner active-option"
+                            onclick="displaySaveButton(); headBanner(); displayWrapper()"
+                        >
+                            <span class="option-text">HEAD BANNER</span>
+                        </li>
+                        <li
+                            class="option-banner active-option"
+                            onclick="displaySaveButton(); megaBanner(); displayWrapper()"
+                        >
+                            <span class="option-text">MEGA BANNER</span>
+                        </li>
+                        <li
+                            class="option-banner active-option"
+                            onclick="displaySaveButton(); bottomBanner(); displayWrapper()"
+                        >
+                            <span class="option-text">BOTTOM BANNER</span>
+                        </li>
+                        <li
+                            class="option-banner active-option"
+                            onclick="displaySaveButton(); bannerPin(); displayWrapper()"
+                        >
+                            <span class="option-text">BANNER PIN</span>
+                        </li>
+                        <li
+                            class="option-banner active-option"
+                            onclick="displaySaveButton(); crossCategory(); displayWrapper()"
+                        >
+                            <span class="option-text"
+                                >CROSS CATEGORY BANNER
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); kulakCık(); displayWrapper()"
+                >
+                    <span class="option-text">KULAKÇIK</span>
+                </li>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); Badge(); displayWrapper()"
+                >
+                    <span class="option-text">BADGE</span>
+                </li>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); Box(); displayWrapper() "
+                >
+                    <span class="option-text">BOX</span>
+                </li>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); Clover(); displayWrapper()"
+                >
+                    <span class="option-text">CLOVER</span>
+                </li>
+
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); notificationIcon(); displayWrapper()"
+                >
+                    <span class="option-text">NOTIFICATION </span>
+                </li>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); story(); displayWrapper()"
+                >
+                    <span class="option-text">STORY</span>
+                </li>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); anKet(); displayWrapper()"
+                >
+                    <span class="option-text">ANKET</span>
+                </li>
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); mostSearched() ; displayWrapper()"
+                >
+                    <span class="option-text">MOST SEARCHED</span>
+                </li>
+
+                <li
+                    class="option active-option"
+                    onclick="displaySaveButton(); progressBar(); displayWrapper()"
+                >
+                    <span class="option-text">PROGRESS BAR</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="wrapper">
+            <form id="form" >
+              
+            </form>
+            <div class="file-options">
+                <div class="option file-name">
+                    <label>File name</label>
+                    <input 
+                        type="text"
+                        spellcheck="false"
+                        placeholder="Enter file name"
+                    />
+                </div>
+                <div class="option save-as">
+                    <label></label>
+                    <div class="select-menus">
+                        <select>
+                            <option value="text/plain">Text File (.txt)</option>
+                            <option value="text/javascript">
+                                JS File (.js)
+                            </option>
+                            <option value="text/html">HTML File (.html)</option>
+                            <option value="image/svg+xml">
+                                SVG File (.svg)
+                            </option>
+                            <option value="application/msword">
+                                Doc File (.doc)
+                            </option>
+                            <option value="application/vnd.ms-powerpoint">
+                                PPT File (.ppt)
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="file_download">
+            <button class="save-btn" type="button" onclick="showConfirmation()">SUBMİT</button>
+        </div>
+        </div>
+        
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-content">
+                <img src="rltd.png" alt="" />
+
+                <p class="popup-text text1">
+                    Sevgili Ziyaretçimiz, target talep formuna hoş geldiniz!
+                </p>
+                <p class="popup-text">
+                    Form içerisinde zorunlu bulunan alanlar (*) ile zorunlu
+                    olmayan alanlar ise boş bırakılarak belirlenmiştir.
+                </p>
+                <p class="popup-text">
+                    Formu doldurduktan sonra indirdiğiniz formu
+                    <span class="talep-mail">clientsupport@euromsg.com</span>
+                    adresine mail olarak iletmeniz gerekmektedir
+                </p>
+                <p class="popup-text">
+                    Formlara ek iletmek istediğiniz görselleri mail içerisinde
+                    ek olarak ekleyerek gönderebilirsiniz.
+                </p>
+                <div class="popup-footer">
+                    <label class="custom-checkbox">
+                        Okudum, onaylıyorum
+                        <input type="checkbox" id="acceptCheckbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <i class="fas fa-times close-icon" onclick="closeWithCondition()"></i>
+                </div>
+            </div>
+        </div>
+        <div class="chatbox-wrapper">
+            <div class="chatbox-toggle">
+                <i class="bx bx-message-dots"></i>
+            </div>
+            <div class="chatbox-message-wrapper id="chatboxMessageWrapper"">
+                <div class="chatbox-message-header">
+                    <div class="chatbox-message-profile">
+                        <img
+                            src="rltd.png"
+                            alt=""
+                            class="chatbox-message-image"
+                        />
+                        <div>
+                            <h4 class="chatbox-message-name"> <a class="rltd_url" href="https://www.relateddigital.com/tr/ " target="_blank" rel="noopener noreferrer">RELATED DIGITAL</a></h4>
+                            <p class="chatbox-message-status">online</p>
+                        </div>
+                    </div>
+                    <div class="chatbox-message-dropdown">
+                        <i
+                            class="bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle"
+                        ></i>
+                        <ul class="chatbox-message-dropdown-menu">
+                            <li>
+                                <a href="#">Search</a>
+                            </li>
+                            <li>
+                                <a href="#">Report</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chatbox-message-content">
+                    <h3 class="chatbox-message-no-message">
+                    </h3>
+                    <div class="chatbox-message-item sent">
+                        <span class="chatbox-message-item-text  ">
+                           girmek istediğiniz target tipini seçin ve isterlerini nasıl doldurulacağını anlatayım sizlere 
+                        </span>
+                       
+                        <span class="chatbox-message-item-time"></span>
+                    </div>
+                    <div class="chatbox-message-item sent">
+                        <span class="chatbox-message-item-text ">
+                            lütfen target tipini yazarken küçük harf ve bitişik yazmayı unutmayınız
+                          </span>
+                        <span class="chatbox-message-item-time"></span>
+                    </div>
+                   
+                </div>
+                <div class="chatbox-message-bottom">
+                    <form action="#" class="chatbox-message-form" id="chatboxForm">
+                        <textarea
+                            rows="2"
+                            cols="24"
+                            placeholder="TARGET TİPİ"
+                            class="chatbox-message-input"
+                             id="messageInput"
+                        ></textarea>
+                       
+                        <button type="submit" class="chatbox-message-submit " >
+                            <i class="bx bx-send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script src="chatbot.js"></script>
+    </body>
+</html>
